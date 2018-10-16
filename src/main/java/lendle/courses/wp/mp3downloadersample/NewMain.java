@@ -23,7 +23,7 @@ import javax.swing.ProgressMonitor;
 
 /**
  *
- * @author lendle
+ * @author lendle12313
  */
 public class NewMain {
 
@@ -45,7 +45,7 @@ public class NewMain {
     }
 
     /**
-     * @param args the command line arguments
+     * @param args the command line arguments123
      */
     public static void main(String[] args) {
         // TODO code application logic here
@@ -66,10 +66,13 @@ public class NewMain {
                             tempFile, new FileDownloaderCallback() {
                         @Override
                         public void totalBytesDownloaded(long bytes, boolean finished, boolean failed) {
-                           //implement this
-                           ////////////////
+                           double ratio=(bytes/FILE_SIZE)*100;
+                           progress.setProgress((int)ratio);//implement this
+                           if(finished){
+                           playFile(tempFile);
+}
                         }
-                        protected double FILE_SIZE;
+                      
                     });
 
                 } catch (Exception ex) {
